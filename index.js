@@ -16,8 +16,8 @@ import { Server } from "socket.io";
 const app = express();
 
 // To serve images for public
-app.use(express.static("public"));
-app.use("/images", express.static("images"));
+app.use(express.static("Public"));
+app.use("/images", express.static("Images"));
 
 // Middleware
 app.use(bodyParser.json({ limit: "30mb", extended: true }));
