@@ -17,7 +17,7 @@ const app = express();
 
 // To serve images for public
 app.use(express.static("Public"));
-app.use("/images", express.static("Images"));
+app.use("/images", express.static("./Public/Images"));
 
 // Middleware
 app.use(bodyParser.json({ limit: "30mb", extended: true }));
