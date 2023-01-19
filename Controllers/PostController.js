@@ -45,19 +45,11 @@ export const updatePost = async (req, res) => {
 export const deletePosts = async (req, res) => {
   const id = req.params.id;
   const { userId } = req.body
-  console.log("re.body:", userId)
   try {
     const post = await PostModel.findById(id);
-    console.log(post,"postUserID")
     if (post.userId == userId) {
-      console.log("hiiii")
       await post.deleteOne();
-     const data = await PostModel.find({}).lean();
-     data
-        .sort((a, b) => {
-          return b.createdAt - a.createdAt;
-        })
-     res.status(200).json(data);
+     res.status(200).json("Post deleted successful");
     } else {
       res.status(403).json("Action Forbidden");
     }
