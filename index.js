@@ -41,12 +41,13 @@ mongoose
   .catch((error) => console.log(error));
 
 // socket.io
+app.options("*",cors());
 
 const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
     //origin: "http://localhost:3000",
-    origin: "https://socialspaces.fashionclues.shop",
+    origins: ["https://socialspaces.fashionclues.shop","https://socialspaces.fashionclues.shop/"],
     methods:["GET","POST"],
     secure: false,
     changeOrigin: true
