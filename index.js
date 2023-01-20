@@ -47,10 +47,10 @@ const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
     //origin: "http://localhost:3000",
-    origins: ["https://socialspaces.fashionclues.shop"],
-    // methods:["GET","POST"],
-    // secure: false,
-    // changeOrigin: true
+    origin: "https://socialspaces.fashionclues.shop",
+    methods:["GET","POST"],
+    secure: false,
+    changeOrigin: true
   },
 });
 
