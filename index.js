@@ -48,9 +48,9 @@ const io = new Server(server, {
   cors: {
     //origin: "http://localhost:3000",
     origins: ["https://socialspaces.fashionclues.shop"],
-    methods:["GET","POST"],
-    secure: false,
-    changeOrigin: true
+    // methods:["GET","POST"],
+    // secure: false,
+    // changeOrigin: true
   },
 });
 
